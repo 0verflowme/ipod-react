@@ -24,16 +24,13 @@ class Ipod extends React.Component {
 
 		if (self.state.enter < 2) {
 			activeRegion.bind(containerElement, "rotate", function (event) {
-				//Perform Operations
+				//Perform Rotation
 
 				var newAngle = event.detail.distanceFromLast;
-				
 
 				if (newAngle < 0) {
-					
 					change++;
 					if (change === 15) {
-						
 						change = 0;
 						if (self.state.activePage === "Home") {
 							if (self.state.activeItem === "NowPlaying") {
@@ -66,10 +63,8 @@ class Ipod extends React.Component {
 						}
 					}
 				} else {
-					
 					change++;
 					if (change === 15) {
-						
 						change = 0;
 						if (self.state.activePage === "Home") {
 							if (self.state.activeItem === "NowPlaying") {
@@ -155,7 +150,6 @@ class Ipod extends React.Component {
 					play: true,
 				});
 			}
-			
 		}
 	};
 

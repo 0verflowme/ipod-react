@@ -61,18 +61,6 @@ class MyMusic extends React.Component {
 						</p>
 					</div>
 				</div>
-
-				<div style={styles.statusBar}>
-					<p style={styles.currTime}>
-						{audio && Math.floor(audio.currentTime)}
-					</p>
-					<div style={styles.seekBar}>
-						<div style={styles.fill} id="fill"></div>
-					</div>
-					<p style={styles.dur}>
-						{audio != null ? Math.floor(audio.duration) : "0 / 0"}
-					</p>
-				</div>
 			</div>
 		);
 	}

@@ -1,7 +1,7 @@
 import React from "react";
-// import Screen from './Screen';
+import Screen from "./Screen";
 import ZingTouch from "zingtouch";
-// import sound from './assets/music/Senorita.mp3'
+import sound from "./assets/music/Sabrina-Carpenter-Looking-at-Me.mp3";
 
 class Ipod extends React.Component {
 	constructor() {
@@ -27,13 +27,13 @@ class Ipod extends React.Component {
 				//Perform Operations
 
 				var newAngle = event.detail.distanceFromLast;
-				console.log(newAngle);
+				
 
 				if (newAngle < 0) {
-					console.log(change);
+					
 					change++;
 					if (change === 15) {
-						console.log("change state");
+						
 						change = 0;
 						if (self.state.activePage === "Home") {
 							if (self.state.activeItem === "NowPlaying") {
@@ -66,10 +66,10 @@ class Ipod extends React.Component {
 						}
 					}
 				} else {
-					console.log(change);
+					
 					change++;
 					if (change === 15) {
-						console.log("change state");
+						
 						change = 0;
 						if (self.state.activePage === "Home") {
 							if (self.state.activeItem === "NowPlaying") {
@@ -103,8 +103,6 @@ class Ipod extends React.Component {
 					}
 				}
 			});
-		} else {
-			console.log("Not allowed to enter");
 		}
 	};
 
@@ -157,27 +155,29 @@ class Ipod extends React.Component {
 					play: true,
 				});
 			}
-			console.log("toggled");
+			
 		}
 	};
 
 	componentDidMount() {
 		let audio = document.getElementsByClassName("audio-element")[0];
-		console.log(audio);
 		this.setState({
 			audio: audio,
 		});
-		console.log(this.state);
 	}
 
 	render() {
 		return (
 			<div style={styles.ipodContainer}>
 				<audio className="audio-element">
-					{/* <source src={sound}></source> */}
+					<source src={sound}></source>
 				</audio>
 
-				{/* <Screen activeItem={this.state.activeItem} activePage={this.state.activePage} audio={this.state.audio} /> */}
+				<Screen
+					activeItem={this.state.activeItem}
+					activePage={this.state.activePage}
+					audio={this.state.audio}
+				/>
 
 				<div
 					id="inner-container"
@@ -196,7 +196,7 @@ class Ipod extends React.Component {
 					<div style={styles.buttonContainer}>
 						<div style={styles.middleButtons}>
 							<i
-								class="fa-solid fa-backward-fast fa-2xl"
+								className="fa-solid fa-backward-fast fa-2xl"
 								style={styles.imageleft}
 							></i>
 							{/* <img
